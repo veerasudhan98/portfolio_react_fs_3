@@ -27,7 +27,7 @@ const LandingSection = () => (
       backgroundColor="rgba(0, 0, 0, 0.5)"
       p={8}
       rounded="md"
-      marginTop="-400px"
+      // marginTop="-300px"
     >
       <VStack spacing={4} alignItems="center">
         <InputGroup>
