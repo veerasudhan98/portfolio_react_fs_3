@@ -1,47 +1,56 @@
 import React from "react";
-import { Avatar, Heading, VStack, AvatarGroup, Box } from "@chakra-ui/react";
+import {
+  VStack,
+  Box,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  Button,
+} from "@chakra-ui/react";
+import { AiOutlineSearch } from "react-icons/ai";
 import FullScreenSection from "./FullScreenSection";
-import { AiOutlineUser } from "react-icons/ai";
-
-const greeting = "Hello, I am Veerasudhan!";
-const bio1 = "A frontend developer";
-const bio2 = "specialized in React";
 
 const LandingSection = () => (
   <FullScreenSection
     justifyContent="center"
     alignItems="center"
     isDarkBackground
-    // backgroundColor="#2A4365"
-    // Add background image and parallax effect
-    backgroundImage={require("../images/hero_2.jpg")} // Replace with actual image URL
+    backgroundImage={require("../images/photo3.jpg")}
     backgroundPosition="center"
     backgroundRepeat="no-repeat"
     backgroundSize="cover"
     backgroundAttachment="fixed"
     width="100%"
-    maxWidth="100%" // Set maxWidth to "0" or "auto" to remove the constraint
+    maxWidth="100%"
   >
     <Box
-      // Add a semi-transparent overlay to make text more readable
       backgroundColor="rgba(0, 0, 0, 0.5)"
       p={8}
       rounded="md"
+      marginTop="-400px"
     >
       <VStack spacing={4} alignItems="center">
-        {/* <Avatar size="xl" name="Pete" src="https://via.placeholder.com/150" /> */}
-        <AvatarGroup spacing="1rem">
-          <Avatar bg="red.500" icon={<AiOutlineUser fontSize="1.5rem" />} />
-        </AvatarGroup>
-        <Heading as="h1" size="xl" color="white">
-          {greeting}
-        </Heading>
-        <Heading as="h2" size="md" color="white">
-          {bio1}
-        </Heading>
-        <Heading as="h2" size="md" color="white">
-          {bio2}
-        </Heading>
+        <InputGroup>
+          <InputLeftElement
+            pointerEvents="none"
+            children={<AiOutlineSearch color="gray.300" />}
+          />
+          <Input
+            type="text"
+            placeholder="Enter the domain you want.."
+            w="75vw"
+          />
+
+          <Button
+            backgroundColor="#1976D2"
+            _hover="disable"
+            ml={2}
+            pl={7}
+            pr={7}
+          >
+            Search Domain
+          </Button>
+        </InputGroup>
       </VStack>
     </Box>
   </FullScreenSection>

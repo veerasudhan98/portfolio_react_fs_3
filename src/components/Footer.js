@@ -14,7 +14,7 @@ const Footer = () => {
           maxWidth="1024px"
           height={16}
         >
-          <p>Group 7 - Ricardo, Shi He, Veerasudhan • © 2023</p>
+          <p>Group 2 • Capstone © 2024</p>
         </Flex>
       </footer>
     </Box>

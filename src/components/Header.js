@@ -110,11 +110,11 @@ const Header = () => {
             spacing={8}
             display={{ base: "none", md: "flex" }} // Display on medium and larger screens, hide on small screens
           >
-            <Link onClick={handleClick("projects")} cursor="pointer">
-              Projects
+            <Link onClick={handleClick("Domain")} cursor="pointer">
+              Domain
             </Link>
-            <Link onClick={handleClick("pricing")} cursor="pointer">
-              Pricing
+            <Link onClick={handleClick("Website Hosting")} cursor="pointer">
+              Website Hosting
             </Link>
             <Link onClick={handleClick("contactme")} cursor="pointer">
               Contact
