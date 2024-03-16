@@ -20,7 +20,7 @@ import { useAlertContext } from "../context/alertContext";
 
 const LandingSection = () => {
   const { isLoading, response, submit } = useSubmit();
-  const { onOpen } = useAlertContext();
+  const { onAlertOpen } = useAlertContext();
 
   const formik = useFormik({
     initialValues: {
@@ -41,12 +41,12 @@ const LandingSection = () => {
         const res = await submit(values);
         console.log("response here", response, res);
         // Handle the response here (e.g., show a success alert)
-        onOpen({ type: response.type, message: response.message });
+        onAlertOpen({ type: response.type, message: response.message });
         // Reset form after successful submission
         formik.resetForm();
       } catch (error) {
         // Handle submission error (e.g., show an error alert)
-        onOpen({
+        onAlertOpen({
           type: "error",
           message: "Error submitting form. Please try again.",
         });

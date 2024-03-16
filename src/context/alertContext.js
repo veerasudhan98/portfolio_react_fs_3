@@ -15,8 +15,9 @@ export const AlertProvider = ({ children }) => {
     <AlertContext.Provider
       value={{
         ...state,
-        onOpen: (type, message) => setState({ isOpen: true, type, message }),
-        onClose: () => setState({ isOpen: false, type: "", message: "" }),
+        onAlertOpen: (type, message) =>
+          setState({ isOpen: true, type, message }),
+        onAlertClose: () => setState({ isOpen: false, type: "", message: "" }),
       }}
     >
       {children}
