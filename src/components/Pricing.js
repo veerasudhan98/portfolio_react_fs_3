@@ -12,25 +12,25 @@ import {
 const pricingTiers = [
   {
     title: "Basic",
-    price: "$10/month",
-    features: ["5 projects", "Limited features", "Basic support"],
+    price: "$5/month",
+    features: ["1 Website Hosting", "15GB SSD", "4GB RAM"],
   },
   {
-    title: "Standard",
-    price: "$25/month",
-    features: ["Unlimited projects", "Priority support", "Custom domain"],
+    title: "Advance",
+    price: "$20/month",
+    features: ["5 Website Hosting", "100GB SSD", "24GB RAM "],
   },
   {
-    title: "Premium",
+    title: "Pro",
     price: "$50/month",
-    features: ["All standard features", "Advanced analytics", "24/7 support"],
+    features: ["15 Website Hosting", "250GB SSD", "64GB RAM"],
   },
 ];
 
 function PricingPage() {
   return (
-    <Box p={24} id="pricing-section">
-      <Heading as="h1" mb={6}>
+    <Box p={24} id="pricing-section" backgroundColor="#1976D2">
+      <Heading as="h1" mb={9} color="#ffffff" textAlign="center">
         Pricing Plans
       </Heading>
       <Box
@@ -39,7 +39,13 @@ function PricingPage() {
         gridTemplateColumns="repeat(auto-fit, minmax(250px, 1fr))"
       >
         {pricingTiers.map((tier, index) => (
-          <Box key={index} borderWidth="1px" borderRadius="lg" p={6}>
+          <Box
+            key={index}
+            borderWidth="1px"
+            borderRadius="lg"
+            p={6}
+            backgroundColor="#ffffff"
+          >
             <Heading as="h2" size="md" mb={2}>
               {tier.title}
             </Heading>
@@ -52,7 +58,7 @@ function PricingPage() {
               ))}
             </UnorderedList>
             <Button colorScheme="blue" mt={4}>
-              Select
+              Buy Now
             </Button>
           </Box>
         ))}

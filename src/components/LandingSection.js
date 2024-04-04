@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   VStack,
   Box,
@@ -25,21 +25,28 @@ const LandingSection = () => {
   const { onAlertOpen } = useAlertContext();
 
   const handleBuyNowClick = () => {
-    // Set loading state to true
-    setIsLoading(true);
+    // scroll to the pricing!
+    window.scrollTo({
+      top: window.innerHeight, // Adjust this value as needed
+      behavior: "smooth",
+    });
+    // // Set loading state to true
+    // setIsLoading(true);
 
-    // Simulate loading for 2 seconds
-    setTimeout(() => {
-      // Set loading state to false
-      setIsLoading(false);
+    // // Simulate loading for 2 seconds
+    // setTimeout(() => {
+    //   // Set loading state to false
+    //   setIsLoading(false);
 
-      // Show alert
-      onAlertOpen({
-        type: "success",
-        message: "Your order placed successfully!",
-      });
-      setDomainName("");
-    }, 2000);
+    //   // Show alert
+    //   onAlertOpen({
+    //     type: "success",
+    //     message: "Your order placed successfully!",
+    //   });
+    //   setDomainName("");
+    //   onClose(); // Close the modal after successful order
+    // }, 2000);
+    onClose();
   };
 
   const checkAvailability = () => {
@@ -88,7 +95,7 @@ const LandingSection = () => {
               isLoading={isLoading} // Add isLoading prop
               loadingText="Placing Order..." // Optional loading text
             >
-              Buy Now
+              Check Pricing
             </Button>
             <Button variant="ghost" onClick={onClose}>
               Close
@@ -98,6 +105,7 @@ const LandingSection = () => {
       </Modal>
 
       <FullScreenSection
+        id="pricing-section" // Add an ID to the pricing section
         justifyContent="center"
         alignItems="center"
         isDarkBackground
