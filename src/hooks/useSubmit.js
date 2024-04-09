@@ -11,10 +11,14 @@ const useSubmit = () => {
   const [response, setResponse] = useState(null);
 
   const submit = async (data) => {
+    // Either success or failure response
     const random = Math.random();
+
+    console.log("random", random);
     setLoading(true);
     try {
       await wait(2000);
+
       if (random < 0.5) {
         throw new Error("Something went wrong");
       }

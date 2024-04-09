@@ -26,7 +26,7 @@ const LandingSection = () => {
     initialValues: {
       firstName: "",
       email: "",
-      type: "hireMe",
+      type: "hosting",
       comment: "",
     },
     validationSchema: Yup.object({
@@ -36,12 +36,14 @@ const LandingSection = () => {
       comment: Yup.string().required("Required"),
     }),
     onSubmit: async (values, { setSubmitting }) => {
-      console.log("inside submit...");
       try {
         const res = await submit(values);
         console.log("response here", response, res);
         // Handle the response here (e.g., show a success alert)
-        onAlertOpen({ type: response.type, message: response.message });
+        onAlertOpen({
+          type: "success",
+          message: `Thanks for your submission, we will get back to you shortly!`,
+        });
         // Reset form after successful submission
         formik.resetForm();
       } catch (error) {
@@ -108,11 +110,9 @@ const LandingSection = () => {
                   onBlur={formik.handleBlur}
                   value={formik.values.type}
                 >
-                  <option value="hireMe">Freelance project proposal</option>
-                  <option value="openSource">
-                    Open source consultancy session
-                  </option>
-                  <option value="other">Other</option>
+                  <option value="hosting">Hosting Services</option>
+                  <option value="pricing">Pricing queries</option>
+                  <option value="support">Support</option>
                 </Select>
               </FormControl>
               <FormControl isInvalid={formik.errors.comment}>

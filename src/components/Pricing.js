@@ -8,6 +8,7 @@ import {
   UnorderedList,
   ListItem,
 } from "@chakra-ui/react";
+import { useAlertContext } from "../context/alertContext";
 
 const pricingTiers = [
   {
@@ -28,6 +29,16 @@ const pricingTiers = [
 ];
 
 function PricingPage() {
+  const { onAlertOpen } = useAlertContext();
+
+  const handleBuyNowClick = () => {
+    // Show success alert
+    onAlertOpen({
+      type: "success",
+      message: "Your request has been sent!",
+    });
+  };
+
   return (
     <Box p={24} id="pricing-section" backgroundColor="#1976D2">
       <Heading as="h1" mb={9} color="#ffffff" textAlign="center">
@@ -57,7 +68,7 @@ function PricingPage() {
                 <ListItem key={idx}>{feature}</ListItem>
               ))}
             </UnorderedList>
-            <Button colorScheme="blue" mt={4}>
+            <Button colorScheme="blue" onClick={handleBuyNowClick} mt={4}>
               Buy Now
             </Button>
           </Box>
