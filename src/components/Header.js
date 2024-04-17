@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+
 import {
   faGithub,
   faLinkedin,
@@ -105,47 +107,75 @@ const Header = () => {
               </Link>
             ))}
           </HStack>
-          {/* Projects and Contact links for desktop view */}
-          <HStack
-            spacing={8}
-            display={{ base: "none", md: "flex" }} // Display on medium and larger screens, hide on small screens
-          >
-            <Link onClick={handleClick("Domain")} cursor="pointer">
-              Domain
+          {/* Dropdown button for "Domain," "Website Hosting," and "Contact" links */}
+          <Box position="relative">
+            <Link
+              onClick={handleNavToggle} // Toggle the dropdown
+              cursor="pointer"
+              color="white"
+              _hover={{ textDecoration: "none" }}
+            >
+              Menu <FontAwesomeIcon icon={faAngleDown} />
             </Link>
-            <Link onClick={handleClick("Website Hosting")} cursor="pointer">
-              Website Hosting
-            </Link>
-            <Link onClick={handleClick("contactme")} cursor="pointer">
-              Contact
-            </Link>
-          </HStack>
+            <Collapse in={isNavOpen} animateOpacity>
+              <VStack
+                spacing={4} // Increased spacing between menu items
+                backgroundColor="#18181b"
+                py={5}
+                width="100px"
+                color="white"
+                zIndex={99} // Set a slightly lower z-index for the dropdown
+                boxShadow="md" // Add a subtle shadow
+                position="absolute"
+                top="100%"
+                left={0}
+                // width="100%"
+              >
+                <Link
+                  onClick={() =>
+                    window.open("https://172.24.52.62/ecp/", "_blank")
+                  }
+                  cursor="pointer"
+                >
+                  Exchange
+                </Link>
+                <Link
+                  onClick={() => window.open("", "_blank")}
+                  cursor="pointer"
+                >
+                  SQL
+                </Link>
+                <Link
+                  onClick={() =>
+                    window.open(
+                      "http://172.24.52.125/nagiosxi/login.php",
+                      "_blank"
+                    )
+                  }
+                  cursor="pointer"
+                >
+                  Monitoring
+                </Link>
+                <Link
+                  onClick={() =>
+                    window.open("https://spchat.group2.local/", "_blank")
+                  }
+                  cursor="pointer"
+                >
+                  Zimbra
+                </Link>
+                <Link
+                  onClick={() =>
+                    window.open("http://172.24.52.4:55414/#", "_blank")
+                  }
+                  cursor="pointer"
+                >
+                  Backup
+                </Link>
+              </VStack>
+            </Collapse>
+          </Box>
         </HStack>
-        {/* Dropdown menu for small screens */}
-        <Collapse in={isNavOpen} animateOpacity>
-          <VStack
-            spacing={2}
-            backgroundColor="#18181b"
-            py={2}
-            color="white"
-            zIndex={99} // Set a slightly lower z-index for the dropdown
-            boxShadow="md" // Add a subtle shadow
-            display={{ base: "block", md: "none" }} // Display on small screens, hide on medium and larger
-          >
-            {/* "Projects" link for mobile view */}
-            <VStack>
-              <Link onClick={handleClick("projects")} cursor="pointer">
-                Projects
-              </Link>
-            </VStack>
-            {/* "Contact" link for mobile view */}
-            <VStack>
-              <Link onClick={handleClick("contactme")} cursor="pointer">
-                Contact
-              </Link>
-            </VStack>
-          </VStack>
-        </Collapse>
       </Box>
     </Box>
   );
