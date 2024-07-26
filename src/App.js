@@ -14,7 +14,6 @@ function App() {
         <main>
           <Header />
           <LandingSection />
-          <PricingSection />
           <ContactMeSection />
           <Footer />
           <Alert />

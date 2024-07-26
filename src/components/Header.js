@@ -21,23 +21,23 @@ import {
 const socials = [
   {
     icon: faEnvelope,
-    url: "mailto:veerasudhan.p.a@gmail.com",
+    url: "",
   },
   {
     icon: faGithub,
-    url: "https://github.com/veerasudhan98",
+    url: "",
   },
   {
     icon: faLinkedin,
-    url: "https://www.linkedin.com/in/veerasudhan/",
+    url: "",
   },
   {
     icon: faMedium,
-    url: "https://medium.com/@sudhancheckmi98",
+    url: "",
   },
   {
     icon: faStackOverflow,
-    url: "https://stackoverflow.com/users/11538294/veera-sudhan",
+    url: "",
   },
 ];
 
@@ -122,13 +122,14 @@ const Header = () => {
                 spacing={4} // Increased spacing between menu items
                 backgroundColor="#18181b"
                 py={5}
-                width="100px"
+                width="150px"
                 color="white"
                 zIndex={99} // Set a slightly lower z-index for the dropdown
                 boxShadow="md" // Add a subtle shadow
                 position="absolute"
                 top="100%"
                 left={0}
+
                 // width="100%"
               >
                 <Link
@@ -137,13 +138,13 @@ const Header = () => {
                   }
                   cursor="pointer"
                 >
-                  Exchange
+                  Database
                 </Link>
                 <Link
                   onClick={() => window.open("", "_blank")}
                   cursor="pointer"
                 >
-                  SQL
+                  Exchange
                 </Link>
                 <Link
                   onClick={() =>
@@ -154,7 +155,7 @@ const Header = () => {
                   }
                   cursor="pointer"
                 >
-                  Monitoring
+                  Collaboration
                 </Link>
                 <Link
                   onClick={() =>
@@ -162,7 +163,7 @@ const Header = () => {
                   }
                   cursor="pointer"
                 >
-                  Zimbra
+                  Monitor
                 </Link>
                 <Link
                   onClick={() =>

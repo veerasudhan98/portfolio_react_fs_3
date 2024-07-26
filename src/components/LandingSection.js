@@ -106,10 +106,13 @@ const LandingSection = () => {
 
       <FullScreenSection
         id="pricing-section" // Add an ID to the pricing section
-        justifyContent="center"
+        paddingTop="30vh"
+        justifyContent="flex-start"
         alignItems="center"
         isDarkBackground
         backgroundImage={require("../images/photo3.jpg")}
+        // backgroundImage={require("./images/photo1.jpg")}
+        backgroundColor="#1976D2"
         backgroundPosition="center"
         backgroundRepeat="no-repeat"
         backgroundSize="cover"
@@ -123,7 +126,7 @@ const LandingSection = () => {
               <Input
                 type="text"
                 placeholder="Enter the domain you want.."
-                w="75vw"
+                w="50vw"
                 value={domainName}
                 onChange={(e) => setDomainName(e.target.value)} // Update domainName state on change
               />
