@@ -134,44 +134,25 @@ const Header = () => {
               >
                 <Link
                   onClick={() =>
-                    window.open("https://172.24.52.62/ecp/", "_blank")
+                    window.open("http://zabbix.g8.local/zabbix", "_blank")
                   }
                   cursor="pointer"
                 >
-                  Database
+                  Zabbix
                 </Link>
                 <Link
-                  onClick={() => window.open("", "_blank")}
+                  onClick={() =>
+                    window.open("http://exchange.g8.local/ecp", "_blank")
+                  }
                   cursor="pointer"
                 >
                   Exchange
                 </Link>
                 <Link
-                  onClick={() =>
-                    window.open(
-                      "http://172.24.52.125/nagiosxi/login.php",
-                      "_blank"
-                    )
-                  }
+                  onClick={() => window.open("", "_blank")}
                   cursor="pointer"
                 >
-                  Collaboration
-                </Link>
-                <Link
-                  onClick={() =>
-                    window.open("https://spchat.group2.local/", "_blank")
-                  }
-                  cursor="pointer"
-                >
-                  Monitor
-                </Link>
-                <Link
-                  onClick={() =>
-                    window.open("http://172.24.52.4:55414/#", "_blank")
-                  }
-                  cursor="pointer"
-                >
-                  Backup
+                  Next cloud
                 </Link>
               </VStack>
             </Collapse>
